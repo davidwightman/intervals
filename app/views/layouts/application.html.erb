@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Intervals</title>
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet" type="text/css">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% if session[:user_id] %>
+
+
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header navbar-brand">Intervals</div>
+      <div class="margin-right">
+            <div><%=link_to("Home", user_path(session[:user_id])) %></div>
+            <div><%=link_to("Log Out", "/sessions", method: :delete) %></div>
+      </div> 
+    </div>
+  </nav>
+
+<% end %>
+
+<%= yield %>
+
+</body>
+</html>
