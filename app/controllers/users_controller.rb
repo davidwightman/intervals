@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   def create
     ## check if the username is already in the database
        @user = User.create(user_params)
+
    if @user.errors.any?
     #   ## if the username is present, then redirect to the login page
       render template: "/users/new"
@@ -60,10 +61,8 @@ end
 
   private
 
-
   def user_params
     params.require(:user).permit(:name, :password, :password_confirmation, :pic)
-    params.permit(:image)
   end
 
 
