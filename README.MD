@@ -11,7 +11,7 @@ https://trello.com/b/AxQ0c64Z/wdi-project-4 (private)
 
 ### Artifacts
 #### User Stories
-A user will be able to log in and be given the oppurtunity to take one of many tests of various difficlty.
+A user will be able to create a profile (name, bio, image) and log in to the application. There a user can take one of many audio quizes of various difficlty. Upon passing an audio quiz a user recieves a notification upon their profile page.
 
 #### Front-end Wireframes
 
