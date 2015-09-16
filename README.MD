@@ -15,7 +15,7 @@ A user will be able to create a profile (name, bio, image) and log in to the app
 
 #### Front-end Wireframes
 
-![](https://github.com/davidwightman/intervals/intervals.pdf)
+![](https://github.com/davidwightman/intervals/blob/master/intervals.pdf)
 
 #### Routes
 
