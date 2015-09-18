@@ -1,8 +1,9 @@
 				<div>
 
-					<%= form_tag("/users/#{session[:user_id]}/tests", method: "put") do %>
+					<%= form_tag("/users/#{session[:user_id]}/tests/show", method: "put") do %>
 						<% @questions.each do |question| %>
-															
+
+
 								<audio controls="controls">
 									Your browser does not support the <code>audio</code> element.
 								  	<source src="/mp3s/<%= question.audio %>" type="audio/mp3">
@@ -10,7 +11,7 @@
 
 								<select>
 									<% question.other_answers.each do |answer| %>
-  										<option value="<%= question.answer %>"><%= question.answer %></option>
+  										<option value="<%= answer %>"><%= answer %></option>
   									<% end %>
 								</select>
 

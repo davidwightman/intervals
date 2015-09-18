@@ -1,0 +1,26 @@
+
+
+
+<div>
+	<% @tests.each do |test| %>
+		<audio controls="controls">
+			Your browser does not support the <code>audio</code> element.
+				<source src="/mp3s/<%= question.audio %>" type="audio/mp3">
+		</audio>
+		<%= test.test_entries.questions.answers %>
+		<%= test.test_entries.student_answers %>
+	<% end %>
+</div>
+					
+<div>
+	<%= form_tag("/users/#{session[:user_id]}", method: "put") do %>
+		<%= submit_tag "back to profile" %>
+	<% end %>
+</div>
+
+<div>
+	<%= form_tag("/users/#{session[:user_id]}/tests/new", method: "put") do %>
+		<%= submit_tag "try again" %>
+	<% end %>
+</div>
+				

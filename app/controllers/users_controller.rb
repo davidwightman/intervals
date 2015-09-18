@@ -50,7 +50,7 @@ end
     def update
        @user = User.find(session[:user_id])
        if logged_in? && check_current_user? 
-        @user.img = params[:image]
+        @user.pic = params[:image]
         @user.save(:validate => false)
         redirect_to user_path(@user)
       else

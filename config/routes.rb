@@ -6,9 +6,9 @@ Rails.application.routes.draw do
    root 'welcome#index'
 
 resources :users do 
-  resources :tests
-end
+  resources :tests 
 
+end
 
 get '/sessions/new' => 'sessions#new'
 get '/users/new' => 'users#new'
