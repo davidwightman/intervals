@@ -1,23 +1,45 @@
-<div>
-	<% @tests.each do |test| %>
-		<audio controls="controls">
-			Your browser does not support the <code>audio</code> element.
-				<source src="https://dl.dropboxusercontent.com/u/72453092/mp3s/<%= test.question.audio %>" type="audio/mp3">
-		</audio>
-		<%= test.test_entries.questions.answers %>
-		<%= test.test_entries.student_answers %>
-	<% end %>
-</div>
-					
-<div>
-	<%= form_tag("/users/#{session[:user_id]}", method: "put") do %>
-		<%= submit_tag "back to profile" %>
-	<% end %>
-</div>
+<div class="container-fluid tests__center">
+	<div class="row">
+		<div class="col-sm-6 col-md-offset-3">
+			<% @test_entries.each do |test_entry| %>
+				<div class="tests__header">
+					<div class="">
+					<audio controls="controls">
+							Your browser does not support the <code>audio</code> element.
+								<source src="https://dl.dropboxusercontent.com/u/72453092/mp3s/<%= Question.find(test_entry.	question_id).audio %>" type="audio/mp3">
+						</audio>
+					</div>
+					<div class="">
+						This is a <%= Question.find(test_entry.question_id).answer %>.<br>
+						Your answer: <%= test_entry.student_answer %>
+					</div>
+				</div>
+			<% end %>
 
-<div>
-	<%= form_tag("/users/#{session[:user_id]}/tests/new", method: "put") do %>
-		<%= submit_tag "try again" %>
-	<% end %>
-</div>
+				<div class="tests__spacer">
+				</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-6 col-md-offset-3">
+			<div class="tests__header">
+				<%= form_tag("/users/#{session[:user_id]}", method: "put") do %>
+					<%= submit_tag "back to profile" %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	<div class="tests__spacer">
+	</div>
+	<div class="row">
+		<div class="col-sm-6 col-md-offset-3">
+			<div class="tests__header">
+				<%= form_tag "/users/1/tests/new", method: :GET do %>
+				<%= submit_tag "try again" %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+<br><br><br>
+</div>	
 				

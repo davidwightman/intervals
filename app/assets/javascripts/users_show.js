@@ -1,8 +1,8 @@
 $(document).ready(function () {
 
 
-  $('a#show_change').click(function(event){
+  $('#show_change').click(function(event){
     event.preventDefault();
-    $('div#change').toggle();
+    $('#change').toggleClass("hidden");
   });
 });

@@ -12,7 +12,7 @@ class TestsController < ApplicationController
 		10.times do |i|
 			##sample chooses random questions
 			question = all_questions.sample
-			test_entry = @test.test_entries.new
+			#test_entry = @test.test_entries.new
 			#sets order
 			#test_entry.order = i+1
 			#test_entry.question_id = question.id
@@ -26,6 +26,12 @@ class TestsController < ApplicationController
 	end
 
 	def show
+		if session[:user_id] == nil
+     	 redirect_to root_path
+    	else
+			@test = Test.find(params[:id])
+			@test_entries = @test.test_entries
+		end
 	end
 	
 	def create
@@ -46,7 +52,7 @@ def update
 
 
 		#end
-
+	redirect_to @test
 	end
 
 

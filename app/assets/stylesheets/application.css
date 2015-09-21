@@ -12,12 +12,14 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_bootstrap
+ *= require bootstrap.min
  *= require_tree .
  *= require_self
  */
-@import "bootstrap-sprockets";
-@import "bootstrap";
+
+body {
+	background-image: url("seamless_paper_texture.png");
+}
 
 .navbar {
 	background-image: url("seamless_paper_texture.png");

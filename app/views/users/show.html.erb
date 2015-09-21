@@ -6,13 +6,13 @@
 
 			<a href="#" id="show_change">
 
-					<img src="<%= @current_user.pic %>">
+					<img src="<%= @current_user.pic || "http://bigpicturesb.net/wp-content/uploads/2011/11/generic-profile-pic.png" %>">
 
 			</a>
 			<div id="change" class="hidden">
 
 						<h6>Change your avatar</h6>
-							<%= form_tag(user_path(session[:user_id]), method: "put") do %>
+							<%= form_tag(user_path(@current_user), method: "put") do %>
 							<%= text_field_tag :image %><br>
 							<%= submit_tag "Change" %>
 							<% end %>
