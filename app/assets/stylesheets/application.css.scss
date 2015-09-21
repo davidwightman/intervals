@@ -18,3 +18,9 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.navbar {
+	background-image: url("seamless_paper_texture.png");
+	border-bottom:  3px solid #242321;
+	margin-bottom: 0px;
+}

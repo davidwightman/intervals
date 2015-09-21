@@ -1,0 +1,45 @@
+.container-fluid, .users__center {
+	background-image: url("seamless_paper_texture.png");
+}
+
+.users__tasting_notes {
+	width: 70%;
+}
+
+.users__content {
+	background-image: url("fresh_snow.png");
+	padding: 20px;
+	border-radius: 20px 
+}
+
+.users__header {
+		background-image: url("fresh_snow.png");
+
+	padding: 20px;
+	border-radius: 20px; 
+	margin-top: 20px;
+}
+
+.users__find {
+		background-image: url("fresh_snow.png");
+
+	padding: 20px;
+	border-radius: 20px 
+}
+
+.users__profile {
+	margin: 0 auto
+}
+
+.users__field input {
+  width: 120px;
+}
+
+.users__spacer {
+	width: 100%;
+	height: 2em
+}
+
+.hidden {
+	display: none;
+}

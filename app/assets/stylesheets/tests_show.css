@@ -1,0 +1,41 @@
+.container-fluid, .users__center {
+	background-image: url("seamless_paper_texture.png");
+}
+
+.tests__tasting_notes {
+	width: 70%;
+}
+
+.tests__content {
+	background-image: url("fresh_snow.png");
+	padding: 20px;
+	border-radius: 20px 
+}
+
+.tests__header {
+		background-image: url("fresh_snow.png");
+
+	padding: 20px;
+	border-radius: 20px 
+}
+
+.tests__find {
+		background-image: url("fresh_snow.png");
+
+	padding: 20px;
+	border-radius: 20px 
+}
+
+.tests__profile {
+	margin: 0 auto
+}
+
+.tests__field input {
+  width: 120px;
+}
+
+.tests__spacer {
+	width: 100%;
+	height: 2em
+}
+

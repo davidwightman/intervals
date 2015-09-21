@@ -1,16 +1,39 @@
-<h1><%= @current_user.name %></h1>
+<div class="container-fluid users__center ">
+	<div class="row" >
+      	<div class="col-sm-6 col-md-offset-3">
+			<div class="users__header" >
+				<h1><%= @current_user.name %></h1>
 
-<img src="<%= @current_user.pic %>">
-<h6>Change your avatar</h6>
+			<a href="#" id="show_change">
 
-<%= form_tag(user_path(session[:user_id]), method: "put") do %>
-	<%= text_field_tag :image %><br>
-	<%= submit_tag "Change" %>
-<% end %>
+					<img src="<%= @current_user.pic %>">
 
-	
-<div>
-	<%= form_tag "/users/1/tests/new", method: :GET do %>
-	<%= submit_tag "take test" %>
-	<% end %>
+			</a>
+			<div id="change" class="hidden">
+
+						<h6>Change your avatar</h6>
+							<%= form_tag(user_path(session[:user_id]), method: "put") do %>
+							<%= text_field_tag :image %><br>
+							<%= submit_tag "Change" %>
+							<% end %>
+
+			</div>
+
+			</div>	
+		</div>
+	</div>
+	<div class="users__spacer">
+	</div>
+	<div class="row">
+		<div class="col-sm-6 col-md-offset-3">
+			<div class="users__content">
+				<%= form_tag "/users/1/tests/new", method: :GET do %>
+				<%= submit_tag "take test" %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	<div class="users__spacer">
+	</div>
 </div>
+			
