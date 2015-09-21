@@ -14,15 +14,16 @@ class TestsController < ApplicationController
 			question = all_questions.sample
 			test_entry = @test.test_entries.new
 			#sets order
-			test_entry.order = i+1
-			test_entry.question_id = question.id
+			# test_entry.order = i+1
+			# test_entry.question_id = question.id
 		
 			@questions.push(question)
 		end
 		@questions.each do |i|
-			TestEntry.create({test_id: @test.id, question_id: i.id})
+		 TestEntry.create({test_id: @test.id, question_id: i.id})
 		end
 		@test.save
+
 	end
 
 	def show
@@ -34,16 +35,13 @@ class TestsController < ApplicationController
 		
 	end
 
-def update
+	def update
 		@test = Test.find(params[:id])
-
 		@test_entries = @test.test_entries
-		binding.pry
-		#@student_answer = @test_entries.each do |student_answer|
-			#student_answer.update({student_answer: })
-
-
-		#end
+		@test_entries.each_with_index do |entry, index|
+			question_number = index + 1
+			entry.update({student_answer: params[question_number.to_s]})
+		end
 
 	end
 
