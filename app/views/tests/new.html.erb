@@ -4,17 +4,18 @@
 			<%= form_tag("/users/#{session[:user_id]}/tests/#{@test.id}", method: "put") do %>
 
 				<div class="tests__header">
-					<% @questions.each do |question| %>
+					<% @questions.each_with_index do |question, index| %>
 						<audio controls="controls">
 							Your browser does not support the <code>audio</code> element.
 								<source src="https://dl.dropboxusercontent.com/u/72453092/mp3s/<%= question.audio %>" type="audio/mp3">
 						</audio>
 
-						<select name="question">
+						<select name="<%= index + 1 %>">
 							<% question.other_answers.each do |answer| %>
   									<option value="<%= answer %>" name="<%= answer %>"><%= answer %></option>
   							<% end %>
 						</select>
+						
 						<hr>			
 					<% end %>
 				</div>
