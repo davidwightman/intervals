@@ -2,7 +2,7 @@
 	<% @tests.each do |test| %>
 		<audio controls="controls">
 			Your browser does not support the <code>audio</code> element.
-				<source src="/mp3s/<%= test.question.audio %>" type="audio/mp3">
+				<source src="https://dl.dropboxusercontent.com/u/72453092/mp3s/<%= test.question.audio %>" type="audio/mp3">
 		</audio>
 		<%= test.test_entries.questions.answers %>
 		<%= test.test_entries.student_answers %>

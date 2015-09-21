@@ -3,7 +3,9 @@ class TestsController < ApplicationController
 	def new
 		@user = User.find(session[:user_id])
 		##creating a new test in tests with proper user id
-		@test = @user.tests.new
+		@test = Test.create({user_id: session[:user_id]})
+		#@student_answer = @test_entry.student_answer.new
+		#@answer = @test_entry.questions.answer.new
 
 		all_questions = Question.all
 		@questions = []
@@ -17,6 +19,9 @@ class TestsController < ApplicationController
 		
 			@questions.push(question)
 		end
+		@questions.each do |i|
+			TestEntry.create({test_id: @test.id, question_id: i.id})
+		end
 		@test.save
 	end
 
@@ -24,14 +29,22 @@ class TestsController < ApplicationController
 	end
 	
 	def create
+		@user = User.find(session[:user_id])
+		
 		
 	end
 
 def update
-		@test = Test.find(session[:user_id])
-		@test.test_entries.order(:order)
-    	@test.test_entries.student_answer
-    	@test.test_entries.question_ids.questions.answer
+		@test = Test.find(params[:id])
+
+		@test_entries = @test.test_entries
+		binding.pry
+		#@student_answer = @test_entries.each do |student_answer|
+			#student_answer.update({student_answer: })
+
+
+		#end
+
 	end
 
 

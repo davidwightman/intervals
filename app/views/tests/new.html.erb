@@ -1,7 +1,8 @@
 <div class="container-fluid tests__center">
 	<div class="row">
 		<div class="col-sm-6 col-md-offset-3">
-			<%= form_tag("/users/#{session[:user_id]}/tests/show", method: "put") do %>
+			<%= form_tag("/users/#{session[:user_id]}/tests/#{@test.id}", method: "put") do %>
+
 				<div class="tests__header">
 					<% @questions.each do |question| %>
 						<audio controls="controls">
@@ -9,9 +10,9 @@
 								<source src="https://dl.dropboxusercontent.com/u/72453092/mp3s/<%= question.audio %>" type="audio/mp3">
 						</audio>
 
-						<select>
+						<select name="question">
 							<% question.other_answers.each do |answer| %>
-  									<option value="<%= answer %>"><%= answer %></option>
+  									<option value="<%= answer %>" name="<%= answer %>"><%= answer %></option>
   							<% end %>
 						</select>
 						<hr>			
