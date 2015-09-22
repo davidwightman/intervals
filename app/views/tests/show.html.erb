@@ -4,14 +4,18 @@
 			<% @test_entries.each do |test_entry| %>
 				<div class="tests__header">
 					<div class="">
+
+
 					<audio controls="controls">
 							Your browser does not support the <code>audio</code> element.
-								<source src="https://dl.dropboxusercontent.com/u/72453092/mp3s/<%= Question.find(test_entry.	question_id).audio %>" type="audio/mp3">
+								<source src="https://dl.dropboxusercontent.com/u/72453092/mp3s/<%= test_entry.question.audio %>" type="audio/mp3">
 						</audio>
+					<img src="https://dl.dropboxusercontent.com/u/72453092/img/<%= test_entry.question.img %>">	
 					</div>
-					<div class="">
-						This is a <%= Question.find(test_entry.question_id).answer %>.<br>
+					<div class="<%= test_entry.question.answer == test_entry.student_answer ? "correct" : "incorrect" %>">
+						This is a <%= test_entry.question.answer %>.<br>
 						Your answer: <%= test_entry.student_answer %>
+
 					</div>
 				</div>
 			<% end %>
