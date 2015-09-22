@@ -27,7 +27,7 @@
 	<div class="row">
 		<div class="col-sm-6 col-md-offset-3">
 			<div class="users__content">
-				<%= form_tag "/users/1/tests/new", method: :GET do %>
+				<%= form_tag "/users/#{session[:user_id]}/tests/new", method: :GET do %>
 				<%= submit_tag "take test" %>
 				<% end %>
 			</div>
