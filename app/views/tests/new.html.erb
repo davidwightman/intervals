@@ -6,7 +6,7 @@
 				<div class="tests__header">
 					<% @questions.each_with_index do |question, index| %>
 						
-						<audio control="controls" preload="auto" src="https://davidwightman.org/mp3s/<%= question.audio %>" type="audio/mp3"></audio>
+						<audio controls="controls" preload="auto" src="https://davidwightman.org/mp3s/<%= question.audio %>" type="audio/mp3"></audio>
 
 						<select name="<%= index + 1 %>">
 							<% question.other_answers.each do |answer| %>
