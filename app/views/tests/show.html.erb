@@ -5,12 +5,9 @@
 				<div class="tests__header">
 					<div class="">
 
+					<audio control="controls" preload="auto" src="https://davidwightman.org/mp3s/<%= test_entry.question.audio %>" type="audio/mp3"></audio>
 
-					<audio controls="controls">
-							Your browser does not support the <code>audio</code> element.
-								<source src="https://dl.dropboxusercontent.com/u/72453092/mp3s/<%= test_entry.question.audio %>" type="audio/mp3">
-						</audio>
-					<img src="https://dl.dropboxusercontent.com/u/72453092/img/<%= test_entry.question.img %>">	
+					<img src="https://davidwightman.org/img/<%= test_entry.question.img %>">	
 					</div>
 					<div class="<%= test_entry.question.answer == test_entry.student_answer ? "correct" : "incorrect" %>">
 						This is a <%= test_entry.question.answer %>.<br>
